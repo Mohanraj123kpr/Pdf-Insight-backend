@@ -175,11 +175,6 @@ Answer:"""
         logger.error(f"Error processing question: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error processing question: {str(e)}")
 
-@app.get("/health")
-async def health_check():
-    """Health check endpoint"""
-    return {"status": "healthy"}
-
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
